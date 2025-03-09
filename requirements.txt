@@ -1,0 +1,24 @@
+# Core Airflow dependencies + defined extra providers
+apache-airflow[amazon,postgres,http]==2.10.3
+airflow-provider-duckdb
+
+# Handled by Extra Providers Installed 
+
+# boto3==1.35.36
+# botocore==1.35.36
+# s3transfer==0.10.3
+# s3fs==2024.10.0
+# psycopg2-binary==2.9.10
+# SQLAlchemy==1.4.54
+# duckdb==1.1.3
+# pandas==2.1.4
+# python-slugify
+# pyarrow==18.0.0
+# python-dotenv==1.0.1
+
+
+
+
+
+
+
