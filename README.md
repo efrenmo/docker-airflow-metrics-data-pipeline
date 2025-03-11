@@ -4,6 +4,6 @@
 
 <img src="diagrams\docker-airflow-architecture-mini.drawio.svg" alt="Docker Airflow Architecture">
 
-## Dag Execution Order
+## DAGs Execution Order
 
-<img src="diagrams\dag-execution-order-mini.drawio.svg" alt="Dag Execution Order">
+<img src="diagrams\dag-execution-order-mini.drawio.svg" alt="DAGs Execution Order">
