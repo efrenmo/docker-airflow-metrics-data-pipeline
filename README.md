@@ -4,14 +4,15 @@
 
 <img src="diagrams\docker-airflow-architecture-314mini.drawio.svg" alt="Docker Airflow Architecture">
 
-### A Complete Task Lifecycle<br>
+### A Complete Task Lifecycle Example<br>
 **0. Initialization**
 - The initialization container first checks system resources, then connects to PostgreSQL to run database migrations, creating all necessary tables and schemas. It also creates default connections and the admin user. This is a prerequisite for all other services. <br>
 
 **1. Scheduler --> ./dags volume**
-- The Scheduler constantly scans the DAGs folder to parse DAG files and detect changes.
+- The Scheduler parses a DAG file from the DAGs voume that says "Run task X Sundays 12:00AM".
 
 **2. Webserver --> ./dags volume**
+- At 12:00AM Sunday, the Scheduler checks the database to confirm tasks's Xs dependencies are met.
 - The Webserver reads DAG files to display their structure and code in the UI.
 
 **3. Scheduler --> Postgres**
@@ -30,7 +31,7 @@
 - The worker reads the DAG definition to understand exactly what code to execute.
   
 **7. Celery Worker --> Postgres** 
-- The Worker updates PostgreSQL to mark the task as "running."
+- The Worker updates PostgreSQL to mark the task as "running".
 
 **8. Celery Worker --> ./logs**
 - The Worker writes to the logs volume as the task is executed by the Worker.
