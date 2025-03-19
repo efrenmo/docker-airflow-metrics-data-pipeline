@@ -144,7 +144,7 @@ The pipeline utilizes multiple storage systems:
 
 ## 6. Operational Considerations
 ### 6.1 Scheduling
-The pipeline runs weekly, triggered automatically at 12:00 AM on Sundays after the completion of the external scraping pipeline.
+While the Ec2 instance start is triggered by the completion an external pipline (in a separate Ec2 instance), This pipeline, is triggered automatically on schedule at 12:00 AM on Sundays.
 
 ### 6.2 Resource Optimization
 Worker containers are configured to efficiently utilize EC2 resources based on task requirements.
