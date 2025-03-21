@@ -110,11 +110,24 @@ Calculates volatility metrics for reference number level data:
 - Measures the rate of fluctuations in the price of the asset over time, a key factor in assessing investment risk.
 - Computes volatility over 1 month, 3 months, 6 months, and 1 year periods.
 
-### 4.5 Growth Rate Analysis (DAG 8)
+### 4.5 Growth Rate Analysis (DAG **Coming Soon**)
 Calculates average annual growth rates for reference number level data:
 
 - Computes growth trends over 1 month, 3 months, 6 months, and 1 year periods
 - Provides annualized performance metrics
+
+### 4.6 Liquidity of Watch Models (DAG 8)
+This DAG calculates how long watch listings remain on the market by analyzing historical listing data. It processes data biweekly and handles brands in chunks for efficient computation.
+
+Calculates key metrics for each watch model:
+- Number of listings
+- Average days/weeks listed
+- Median days/weeks listed
+- Standard deviation of listing duration
+- Minimum/maximum listing duration
+
+### 4.7 Stop Instance (DAG 9)
+Upon completion of the pipeline, this dag stops all docker containers and shuts down Ec2 instance.
 
 ## 5. Technical Implementation
 ### 5.1 Chunking Strategy
