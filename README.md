@@ -76,27 +76,24 @@ The first DAG performs several critical functions:
 - Performs data cleansing, format standardization, currency conversion, and outlier detection and removal.
 - Loads processed data to a PostgreSQL RDS database.
 
-### 4.2 Market Price Calculation (DAGs 2-5)
+### 4.2 Market Price Calculations & Price Trend Analysis (DAGs 2-5)
 These DAGs calculate current market prices at different levels of aggregation:
 
 **Reference Number Level (DAG 2)**
-- Aggregates listings by brand and reference number
-- Calculates median price for the current week
-- Combines with historical data to compute 30-day rolling average
-- Calculates price changes over 1 week, 1 month, 3 months, 6 months, and 1 year
+- Aggregates current listings by brand and reference number.
+- Calculates median price for the current week.
+- Combines the above with historical data to compute 30-day rolling average of median prices.
+- Calculates price changes over 1 week, 1 month, 3 months, 6 months, and 1 year.
 
 **Specific Model Level (DAG 3)**
-
 - Aggregates listings by brand and specific model
 - Follows similar calculation methodology as reference number level
 
 **Parent Model Level (DAG 4)**
-
 - Aggregates listings by brand and parent model (e.g., Rolex Daytona, Omega Constellation)
 - Follows similar calculation methodology as reference number level
 
 **Brand Level (DAG 5)**
-
 - Aggregates all listings by brand
 - Follows similar calculation methodology as reference number level
 
