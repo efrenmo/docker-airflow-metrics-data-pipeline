@@ -82,7 +82,7 @@ These DAGs calculate current market prices at different levels of aggregation:
 **Reference Number Level (DAG 2)**
 - Aggregates current listings by brand and reference number.
 - Calculates median price for the current week.
-- Combines the above with historical data to compute 30-day rolling average of median prices.
+- Combines the new data with historical data to compute 30-day rolling average of median prices.
 - Calculates price changes over 1 week, 1 month, 3 months, 6 months, and 1 year.
 
 **Specific Model Level (DAG 3)**
