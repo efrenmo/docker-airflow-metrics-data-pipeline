@@ -1,18 +1,13 @@
-# csvs_to_single_parquet.py 
-
 """
 1st scritp to run in the processing of new weekly csv files. 
 
 This script cleans and concatenate weekly csv files from s3, and converts them to parquet file format.
 
-With the actvation of 1 functon, clean_up_combined() which is commented out within the load_csv_data_from_s3() 
-funciton in the data_loading.py module, the script can be anabled to re-apply clean_up_combined.py cleaning 
+With the actvation of the clean_up_combined() function embeded in the load_csv_data_from_s3() 
+function (which is currently comment-out) in the data_loading.py module, the script can be anabled to re-apply clean_up_combined.py, cleaning 
 functions to older raw files.
 
 """  
-
-
-############# Dependencies ############
 
 # from modules.data_cleaning import clean_data
 # from modules.currency_conversion import get_exchange_rates, process_dataframe
