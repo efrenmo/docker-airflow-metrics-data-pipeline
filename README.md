@@ -59,6 +59,74 @@ The pipeline runs on an AWS EC2 instance that is activated by the completion of 
 **11. Webserver --> ./logs volume**
 - The Webserver reads from the logs volume to display task logs in the web UI. 
 
+<br>
+
+### 2.3 Directory Structure
+
+```
+./dags
+├── modules
+│   ├── advanced_financial_metrics.py
+│   ├── config.py
+│   ├── currency_conversion.py
+│   ├── data_aggregation.py
+│   ├── data_cleaning.py
+│   ├── data_enrichment.py
+│   ├── data_loading.py
+│   ├── database_operations.py
+│   ├── datalake_operations.py
+│   ├── outlier_thresholds.py
+│   ├── ref_num_clean_up.py
+│   ├── scraped_listings_clean_up.py
+│   ├── update_db_tables.py
+│   └── utilities.py
+├── sql
+│   ├── brand_get_latest_week_listings.sql
+│   ├── brand_get_price_hist_for_the_last_1_dot_5_yrs.sql
+│   ├── get_max_date_for_load_historical_data.sql
+│   ├── parent_mdl_get_latest_week_listings.sql
+│   ├── parent_mdl_get_price_hist_for_the_last_1_dot_5_yrs.sql
+│   ├── ref_num_listings_weeks_on_market_get_required_hist_listings.sql
+│   ├── ref_num_volatility_get_required_price_hist.sql
+│   ├── specific_mdl_get_latest_week_listings.sql
+│   └── specific_mdl_get_price_hist_for_the_last_1_dot_5_yrs.sql
+├── topic1_historic_listings_db
+│   └── dag1_upload_to_historic_listings_db
+│       ├── dag1_upload_to_historic_listings_db.py
+│       ├── step_1_wkly_csvs_to_parquet.py
+│       └── step_2_upload_to_historic_listings_db_and_dl.py
+├── topic2_reference_number_metrics
+│   ├── listings_numb_weeks_on_market
+│   │   └── dag_listings_numb_weeks_on_market.py
+│   ├── price_hist_and_stats_incremental_mixed_cond
+│   │   ├── dag1_ref_num_price_hist_stats_incremental_mixed_cond.py
+│   │   └── util_ref_num_price_hist_and_stats_incremental_mixed_cond.py
+│   └── volatility_of_hist_prices
+│       ├── dag_price_volatility_of_ref_num_mixed_cond.py
+│       ├── get_s3_buckets_subfolders.ipynb
+│       └── util_price_volatility_of_ref_num_mixed_cond.py
+├── topic3_specific_model_metrics
+│   └── price_hist_and_stats_mixed_cond
+│       ├── dag_specific_mdl_price_hist_and_stats_incremental_mixed_cond.py
+│       └── util_specific_mdl_price_hist_and_stats_incremental_mixed_cond.py
+├── topic4_parent_model_metrics
+│   ├── price_hist_and_stats_incremental_mixed_cond
+│   │   ├── dag_parent_mdl_price_hist_and_stats_incremental_mixed_cond.py
+│   │   └── util_parent_mdl_price_hist_and_stats_incremental_mixed_cond.py
+│   └── test.ipynb
+├── topic5_brand_metrics
+│   └── price_hist_and_stats_incremental_mixed_cond
+│       ├── dag_brand_price_hist_and_stats_incremental_mixed_cond.py
+│       └── util_brand_price_hist_and_stats_incremental_mixed_cond.py
+├── topic6_market_makeup_stats
+│   ├── dag_mrkt_makeup_pipeline.py
+│   └── util_mrkt_makeup_pipeline.py
+└── topic7_stop_instance
+    └── dag_stop_instance.py
+
+```
+
+
 ## 3. Pipeline Components
 
 ### 3.1 DAG Workflow
