@@ -1,4 +1,9 @@
 # Luxury Watch Market Financial Metrics Data Pipeline
+
+<img src="diagrams\website_screenshot_rolex.jpg" alt="Website Screenshot 1">
+
+<img src="diagrams\website_screeenshot_rolex_2.jpg" alt="Website Screenshot 12">
+
 ## 1. Introduction
 This document provides a comprehensive overview of the Luxury Watch Market Financial Metrics Calculations Data Pipeline, an Airflow-based system designed to process, analyze, and derive market insights from watch sales listing data across multiple e-commerce platforms and forums.
 
