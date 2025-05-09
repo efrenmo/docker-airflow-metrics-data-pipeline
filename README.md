@@ -29,9 +29,10 @@ The pipeline runs on an AWS EC2 instance that is activated by the completion of 
 
 **1. Scheduler --> ./dags volume**
 - The Scheduler parses a DAG file from the DAGs volume that says "Run task X Sundays 12:00AM".
+- At 12:00AM Sunday, the Scheduler checks the database to confirm tasks's Xs dependencies are met.
 
 **2. Webserver --> ./dags volume**
-- At 12:00AM Sunday, the Scheduler checks the database to confirm tasks's Xs dependencies are met.
+
 - The Webserver reads DAG files to display their structure and code in the UI.
 
 **3. Scheduler --> Postgres**
