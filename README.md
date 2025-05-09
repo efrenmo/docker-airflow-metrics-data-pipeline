@@ -28,7 +28,7 @@ The pipeline runs on an AWS EC2 instance that is activated by the completion of 
 - The initialization container first checks system resources, then connects to PostgreSQL to run database migrations, creating all necessary tables and schemas. It also creates default connections and the admin user. This is a prerequisite for all other services. <br>
 
 **1. Scheduler --> ./dags volume**
-- The Scheduler parses a DAG file from the DAGs voume that says "Run task X Sundays 12:00AM".
+- The Scheduler parses a DAG file from the DAGs volume that says "Run task X Sundays 12:00AM".
 
 **2. Webserver --> ./dags volume**
 - At 12:00AM Sunday, the Scheduler checks the database to confirm tasks's Xs dependencies are met.
